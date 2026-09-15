@@ -1,0 +1,31 @@
+using System.Reflection.Emit;
+
+namespace Activty3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Moves the knight right until it reaches 50 pixels in front of the devil
+            while (picHero.Left < picTreasure.Left - 50)
+            {
+                picHero.Left += 10;                     // Move knight 10 pixels right
+                Application.DoEvents();                 // Refresh screen
+                System.Threading.Thread.Sleep(100);     // Pause for animation
+            }
+
+            // Update status text
+            lblStatus.Text = "Devil Defeated!";
+        }
+    }
+}
