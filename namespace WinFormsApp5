@@ -1,0 +1,35 @@
+namespace WinFormsApp5
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnGuess_Click(object sender, EventArgs e)
+        {
+            int secret = 7;
+            int guess = Convert.ToInt32(txtGuess.Text);
+
+            while (guess != secret)
+            {
+                lblMessage.Text = "Wrong Guess! Try Again.";
+                return;
+            }
+
+            lblMessage.Text = "You Win!";
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
