@@ -1,0 +1,46 @@
+namespace WinFormsApp11
+{
+    public partial class Form1 : Form
+    {
+        // Star counter
+        int stars = 0;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        // Reset button
+        private void button2_Click(object sender, EventArgs e)
+        {
+            stars = 0;
+
+            lblStars.Text = "⭐ Stars: " + stars;
+        }
+
+        // Collect button
+        private void btnCollect_Click(object sender, EventArgs e)
+        {
+            stars++;
+
+            switch (stars)
+            {
+                case 1:
+                    lblStars.Text = "⭐ You collected 1 star!";
+                    break;
+
+                case 2:
+                    lblStars.Text = "⭐ You collected 2 stars!";
+                    break;
+
+                default:
+                    lblStars.Text = "⭐ Stars collected: " + stars;
+                    break;
+            }
+        }
+    }
+}
